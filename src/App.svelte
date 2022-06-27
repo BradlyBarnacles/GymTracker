@@ -16,8 +16,10 @@
 		{:else}
 		<p>no cards</p>
 	{/each}
-	<input bind:value={input}>
-	<button on:click={addCard}>Add Card</button>
+	<div class="input-container">
+		<input bind:value={input}>
+		<button on:click={addCard}>Add Card</button>
+	</div>
 </main>
 
 <style>
@@ -33,7 +35,7 @@
 		font-weight: 100;
 	}
 
-	button {
+	.input-container {
 		position: fixed;
 		bottom: 0px;
 		right: 0px;
