@@ -3,18 +3,20 @@
 	import Card from "./components/Card.svelte"
 
 	var cards = [];
+	let input = "place holder"
 
 	function addCard() {
-		cards = [...cards, 1];
+		cards = [...cards, input];
 	}
 </script>
 
 <main>
 	{#each cards as card}
-		<Card></Card>
+		<Card title={card}></Card>
 		{:else}
 		<p>no cards</p>
 	{/each}
+	<input bind:value={input}>
 	<button on:click={addCard}>Add Card</button>
 </main>
 
@@ -22,8 +24,6 @@
 	main {
 		text-align: center;
 		padding: 1em;
-		max-width: 240px;
-		margin: 0 auto;
 	}
 
 	h1 {
@@ -31,6 +31,13 @@
 		text-transform: uppercase;
 		font-size: 4em;
 		font-weight: 100;
+	}
+
+	button {
+		position: fixed;
+		bottom: 0px;
+		right: 0px;
+		margin: 20px;
 	}
 
 	@media (min-width: 640px) {

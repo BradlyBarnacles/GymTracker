@@ -1,6 +1,8 @@
+<script>
+	export let title;
+</script>
 
-
-<div></div>
+<div>{title}</div>
 
 <style>
     div {
