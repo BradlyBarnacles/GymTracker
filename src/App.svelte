@@ -1,12 +1,21 @@
 <script lang="ts">
 	export let name: string;
 	import Card from "./components/Card.svelte"
+
+	var cards = [];
+
+	function addCard() {
+		cards = [...cards, 1];
+	}
 </script>
 
 <main>
-	<Card></Card>
-	<Card></Card>
-	<Card></Card>
+	{#each cards as card}
+		<Card></Card>
+		{:else}
+		<p>no cards</p>
+	{/each}
+	<button on:click={addCard}>Add Card</button>
 </main>
 
 <style>
